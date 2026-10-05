@@ -11,4 +11,5 @@ let a = null
 //  undefined(value is not assin) , symbol(unique) , object . 
 
 console.log(typeof age) // (typeof) it give datatype of variable.
+console.log(typeof(age));
 console.log(typeof null) // object
