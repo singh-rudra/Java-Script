@@ -1,6 +1,6 @@
 //for numbers.
 let score = "abc"
-console.log(typeof score)
+console.log(typeof score) //string
 let valueInNumber=Number(score) // If convert string with char and undefined it store NaN and for null --> 0 , boolean --> 1. "but datatype was change to number".
 console.log(valueInNumber)  
 console.log(typeof valueInNumber)
@@ -49,8 +49,9 @@ console.log(2+2+"1") //41
 
 console.log(true) //true
 console.log(+true) //1
-//console.log(true+)//error
+//console.log(true+)//syntax error
 console.log(+"")//0
+//+varible = convert type of variable into number
 
 let num1,num2,num3
 num1=num2=num3=2+2
