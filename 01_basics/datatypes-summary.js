@@ -34,3 +34,18 @@ const anotherId = Symbol('123')
 console.log(id === anotherId) // false
 
 const bigNumber = 54696298975n //(BigInt)
+
+const heroes=["shaktiman","naagraj","doga"]// arrays
+let myObj={ 
+    name:"Rudra",
+    age: 20
+}// inside the {} the variables are object,store in key : values.
+
+//defining function
+const myFunction = function(){
+    console.log("Hello World")
+}
+
+console.log(typeof myFunction)//function or object Function
+// all the non-primitive data-type are typeOf "object".
+
