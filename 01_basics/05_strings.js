@@ -38,7 +38,6 @@ console.log(url.includes('singh'))//true
 
 console.log(gameName.split('-'))//['Dsa-',;java'] , syntax : .split(seprater , limit).
 
-
 /*     
     To study all methods of string go to google - inspect type any string(ex: const str=new String('Ruudra')) and call it .    
 */
