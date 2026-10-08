@@ -14,7 +14,7 @@ const myArray1=["Rudra",3,57,true,]
 const myArr2 = new Array(1,2,3,4) 
 console.log(myArr2) //[1,2,3,4]
 
-// we can acess the elemets the of array by using indexing.
+// we can access the elemets the of array by using indexing.
 console.log(myArray1[0]) // Rudra
 
 
