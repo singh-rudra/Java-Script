@@ -57,3 +57,4 @@ console.log(Object.entries(tinderUser)) //[ [ 'id', '123abc' ], [ 'name', 'Rudra
 
 console.log(tinderUser.hasOwnProperty("isLoggedIn")) // check the property exist or not.
 console.log(regularUser.hasOwnProperty("fullName"))
+
