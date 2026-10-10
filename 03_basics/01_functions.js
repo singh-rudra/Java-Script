@@ -16,7 +16,7 @@ function addTwoNumbers(n1,n2){ // n1,n2 are parameters.
 }
 
 addTwoNumbers() // NaN
-addTwoNumbers(10 , 20) // 30 // here 10,20 are argument.
+addTwoNumbers(10 , 20) // 30 // when we pass more than required arug it ignore . here 10,20 are argument.
 addTwoNumbers(10,"20") // 1020
 addTwoNumbers(10,"a") //10a
 addTwoNumbers(10,null) //10
@@ -53,3 +53,34 @@ console.log(loginUserMessage("Rudra"))
 console.log(loginUserMessage())
 
 
+function calculateCartPrice(...num1){ // ... => these are the rest and spread operator they are the rest operator here , acoording to there usecase there names change 
+    return num1
+}
+console.log(calculateCartPrice(200,400,500)) //[ 200, 400, 500 ]
+
+
+function calculateCartPrice1(val1,val2,...num1){ 
+    return num1
+}
+console.log(calculateCartPrice1(200,400,500,1000)) // [ 500, 1000 ]
+
+
+const user = {
+    username: "sam",
+    price: 199
+}
+function  handleObject(anyObject){
+    console.log(`Username is ${anyObject.username} and price is ${anyObject.price}`)
+}
+handleObject(user)
+handleObject({
+    username: "satya",
+    price: 150
+})
+
+const myNewArray=[200,400,100,600]
+function secondValue(getArray){
+    return getArray[1]
+}
+console.log(secondValue(myNewArray))
+console.log(secondValue([100,40,59,30]))
