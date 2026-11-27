@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black;color: white;display: flex;justify-content: center;align-items: center;height: 100vh;">
+    <div id="parent">
+        <h1>Olympic Countdown Timer</h1>
+        <div id="result"></div>
+    </div>    
+</body>
+<script >
+    const sel = document.getElementById('result')
+setInterval(()=>{
+const currentTime = Date.now() //milisec
+const olyTime = new Date(2027,6,14).getTime()//milisec
+let timer = olyTime-currentTime
+
+const day = Math.floor(timer/(1000*60*60*24))
+timer%=(1000*60*60*24)
+const hour = Math.floor(timer/(1000*60*60))
+timer%=(1000*60*60)
+const min = Math.floor(timer/(1000*60))
+timer%=(1000*60)
+const sec = Math.floor(timer/(1000))
+timer%=(1000)
+sel.textContent=`${day}:Days ${hour}:Hour ${min}:Minute ${sec}:Second`
+},1000)
+</script>
+</html>

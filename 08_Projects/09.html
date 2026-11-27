@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black;color: white;">
+    <h1>To DO LIST</h1>
+    <form>
+        <input type="text" id="task" style="width: 300px;height: 30px;padding: 5px;font-size: 20px;">
+        <button type="submit" style="height: 42px;width: 60px;padding: 5px;">ADD</button>
+    </form>
+    <br></br>
+    <div id="allTask"></div>
+    
+</body>
+<script >
+    const form = document.querySelector('form')
+const allTask = document.querySelector('#allTask')
+const input = document.querySelector('input')
+
+form.addEventListener('submit',(e)=>{
+    e.preventDefault()
+    const text = input.value.trim()
+    if(text=='')
+        return
+    const parent = document.createElement('div')
+    const task = document.createElement('span')
+    task.style.marginRight = '20px'
+    task.textContent=text
+    const delbutton = document.createElement('button')
+    delbutton.textContent = 'Delete'
+    delbutton.style.width="60px"
+    delbutton.style.marginRight="10px"
+    const donebutton = document.createElement('button')
+    donebutton.textContent = 'Done'
+    donebutton.style.width="60px"
+    delbutton.style.marginRight="10px"
+    parent.append(task,donebutton,delbutton)
+    allTask.append(parent)
+
+    delbutton.addEventListener('click',()=>{
+        parent.remove()
+    })
+    donebutton.addEventListener('click',()=>{
+        task.style.textDecoration = 'line-through'
+        task.style.color = 'grey'
+        donebutton.remove()
+    })
+    form.reset()
+})
+</script>
+</html>

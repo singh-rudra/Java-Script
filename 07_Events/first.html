@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black;color:white;">
+    <!-- <h1 id="first" onclick="handleClick()">Hello Rudra Singh</h1> -->
+    <!-- <h1 id="first"> Rudra Singh</h1> -->
+    <!-- <div id="parent">
+        <div id="child1" class="child" style="height:150px;width:150px;background-color: orange;">First</div>
+        <div id="child2" class="child" style="height:150px;width:150px;background-color: green;">Second</div>
+        <div id="child3" class="child" style="height:150px;width:150px;background-color: red;">Third</div>
+        <div id="child4" class="child" style="height:150px;width:150px;background-color: pink;">Fourth</div>
+
+    </div> -->
+
+    <div id="grandparent" style="height:300px;width:300px;background-color:orange;display:flex;justify-content: center;align-items: center;">
+        <div id="parent" style="height:200px;width:200px;background-color:red;display:flex;justify-content: center;align-items: center;">
+            <div id="child" style="height:100px;width:100px;background-color:pink">
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    // function handleClick(){
+//     const sel = document.getElementById("first")
+//     sel.textContent = "Jai Bhawani"
+// }
+
+
+ const element = document.getElementById("first")
+// element.onclick = function handleClick(){
+//     element.textContent = "Jai Bhawani"
+// } 
+// element.onclick = function handleClick(){
+//     element.textContent = "Jai shree ram"
+// }// nicha wala upper wala ko override kar dega.   
+
+
+// element.addEventListener('mousemove',()=>{
+//     element.textContent = "I am the Best"
+// })
+
+// element.addEventListener('click',()=>{
+//     element.style.backgroundColor="pink"
+// })
+
+// const child1=document.getElementById('child1')
+// child1.addEventListener('click',()=>{
+//     child1.textContent="I am clicked"
+// })
+
+// const parent1 = document.getElementById("parent")
+// for(let child of parent1.children){
+//     child.addEventListener('click',()=>{
+//         child.textContent="I am clicked"
+//     })
+// }
+// it is enough 
+const parent2 = document.getElementById('parent')
+parent2.addEventListener('click',(e)=>{
+    e.target.textContent = "I am Best"
+})
+
+
+
+
+const grandparent = document.getElementById("grandparent")
+grandparent.addEventListener("click",(e)=>{
+    console.log(e); // it give event object.
+    e.stopPropagation() // it stops bubbling
+    console.log(e.target)// exactly elecement triger the event.
+    
+    console.log("Grandparent is clicked")
+})
+const parent = document.getElementById("parent")
+parent.addEventListener("click",()=>{
+    console.log("parent is clicked")
+})
+const child = document.getElementById("child")
+child.addEventListener("click",()=>{
+    console.log("child is clicked")
+})
+
+/* bublling phase :
+
+    addEventListner having 3rd argument by default it is false , 
+    if we do it true it give in reverse order.
+    example :
+    if you click in pink :
+    it give : child,parent,grandparent.
+
+    if ew do true : grandparent,parent,child.
+*/ 
+
+
+// remove event listner.
+
+const parent1 = document.getElementById('parent')
+const func = function (e){
+    e.target.textContent = "I am Best"
+    parent2.removeEventListener('click',func)
+}
+parent2.addEventListener('click',func)
+</script>
+</html>

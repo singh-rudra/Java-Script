@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black;color: white;display: flex;font-size: 20px;justify-content: center;align-items: center;height: 100vh;">
+    <div id=""first>
+        <h1>Honsty is best policy</h1>
+        <button>Random Quote Generator</button>
+    </div>
+</body>
+<script >
+    // Randomly code generating
+
+const quotes = ["hello","hi","bye"]
+const quote = document.querySelector('h1')
+const sel = document.querySelector('button')
+sel.addEventListener('click',()=>{
+    const index = Math.floor(Math.random()*3)
+    quote.textContent=quotes[index]
+})
+</script>
+</html>

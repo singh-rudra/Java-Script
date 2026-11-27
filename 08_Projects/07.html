@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black;color:red;display: flex;justify-content: center;align-items: center;height: 100vh;">
+    <div id="parent">
+        <h1>Astrology Insight</h1>
+        <form>
+            <label for="Fname">First Name :</label>
+            <br>
+            <input type="text" id="Fname" required>
+            <br></br>
+            <label for="Lname">First Name :</label>
+            <br>
+            <input type="text" id="Lname" required>
+            <br></br>
+            <label >Date of Birth :</label>
+            <br>
+            <label for="day">Day :</label>
+            <br>
+            <input type="text" id="day" min="1" max="31" required>
+            <br></br>
+            <label for="month">Month :</label>
+            <br>
+            <input type="text" id="month" min="1" max="12" required>
+            <br></br>
+            <label for="year">Year :</label>
+            <br>
+            <input type="text" id="year" min="1900" max="2026" required>
+            <br></br>
+            <button type="submit" style="color:black;font-size: 15px;">Get Insights</button>
+
+            <br></br>
+            <p id="result"></p>
+        </form>
+    </div>
+</body>
+<script >
+    const form = document.querySelector('form')
+    form.addEventListener('submit',(e)=>{
+    e.preventDefault()
+    document.getElementById('result').textContent=`Hello ${document.getElementById('Fname').value} ${document.getElementById('Lname').value} You Date of birth is : ${document.getElementById('day').value}.${document.getElementById('month').value}.${document.getElementById('year').value} you future will be bright & you are a good person . `
+    e.reset()
+})
+</script>
+</html>

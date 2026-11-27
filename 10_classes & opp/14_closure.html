@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+</body>
+<script>
+    // function init(){
+    //     let name = "Mozilla"
+    //     function displayName(){
+    //         console.log(name);
+    //     }
+    //     displayName();
+    // }
+    // init();
+
+    // function outer(){
+    //     const username="abc"
+    //     console.log("outer", secret);// secret can't acessable
+        
+    //     function inner(){
+    //         console.log('Inner ', username);
+    //         let secret = "my123"
+    //     }
+    //     function innerTwo(){
+    //         console.log(("innerTwo", username));
+    //         console.log(secret); // secret can't acessable
+            
+    //     }
+    //     inner ()
+    //     innerTwo()
+    // }
+    // outer()
+    //     console.log("TOO outer", username);
+        
+    
+
+
+//     function makeFun(){
+//     const name= "RPS"
+//     function displayName(){
+//         console.log(name)
+//     }
+//     return displayName // it return lexical scope
+// }
+// const myfunction = makeFun()
+// myfunction() // RPS
+</script>
+<script>
+    //can't use we ues next one.
+
+    // document.getElementById('orange').onclick=function(){
+//     document.body.style.backgroundColor = 'orange'
+// }
+// document.getElementById('Green').onclick=function(){
+//     document.body.style.backgroundColor = 'green'
+// }
+
+function clickHandler(color){
+   return function(){
+        document.body.style.backgroundColor = `${color}`
+    }
+}
+document.getElementById('orange').onclick=clickHandler("orange")
+document.getElementById('Green').onclick=clickHandler("green")
+</script>
+</html>
