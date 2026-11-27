@@ -2,19 +2,89 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>DOM Learning</title>
-    <style>
-        .bg-black {
-            background-color: #000;
-            color: #fff;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOCUMENT</title>
 </head>
-<body>
-    <div class="bg-black">
-        <h1 id="title" class="heading">DOM Learning on Youtube</h1>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis nobis provident maxime est quo a molestias corrupti, beatae voluptatum blanditiis, voluptatibus excepturi dolor atque! Sit corporis enim nobis distinctio harum.</p>
+<body style="background-color: black; color: white;">
+    <h1 id="first">Hello Everyone</h1>
 
-    </div>
+    <ul id="A1"></ul>
 </body>
+<script >
+    const newEle = document.createElement('h2')
+newEle.textContent ="How are you"
+newEle.id="second"
+
+const temp = document.getElementById('first')
+temp.after(newEle)
+
+const newEle2 = document.createElement('h3')
+newEle2.textContent = "Happy Diwali"
+newEle2.id='third'
+// newEle2.className = 'diwali'
+// newEle2.className+=' Holi'
+newEle2.classList.add("diwali")
+newEle2.classList.add('holi')
+newEle2.classList.remove('diwali')
+
+newEle2.style.backgroundColor="pink"
+newEle2.style.color="red"
+newEle2.style.fontSize='20px'
+temp.before(newEle2)
+newEle2.setAttribute("hello","ji")
+
+console.log(newEle2.getAttribute('id'))
+console.log(newEle2.getAttribute('class'))
+console.log(newEle2.getAttribute('hello'))
+
+/*
+const list = document.createElement('li')
+list.textContent = "milk"
+
+const list2 = document.createElement('li')
+list2.textContent="sugar"
+
+const list3 = document.createElement('li')
+list3.textContent="cake"
+
+const list4 = document.createElement('li')
+list4.textContent="tea"
+
+const list5 = document.createElement('li')
+list5.textContent="coffee"
+
+const ulEle = document.getElementById('A1')
+// ulEle.append(list)
+// ulEle.append(list2)
+ulEle.append(list,list2)
+ulEle.prepend(list3)
+list.after(list4)
+
+ulEle.children[1].after(list5)
+
+*/
+const arr =["milk","tea","coffee"]
+const ulEle = document.getElementById("A1")
+const fragment = document.createDocumentFragment()
+for(let food of arr){
+    const list = document.createElement('li')
+    list.textContent=food
+    fragment.append(list)
+}
+ulEle.append(fragment)
+
+
+const select = document.getElementById('first')
+select.remove()
+
+const list = document.createElement('li')
+list.textContent = "<h1>abc</h1>"
+
+const list2 = document.createElement('li')
+list2.innerHTML="<h1>123</h1>" // can't use innerHTML
+
+ulEle.append(list)
+ulEle.append(list2)
+
+</script>
 </html>
